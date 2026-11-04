@@ -1,0 +1,16 @@
+# Copy to user.yaml at the repository root and edit the three personal fields.
+# Confirm group IDs and storage access with `id` on jumphost; see docs/verification.md.
+user: YOUR_GASPAR_USERNAME
+uid: YOUR_NUMERIC_UID
+group: THL2-unit
+gid: 11167
+supplemental_groups: [84730]
+working_dir: /thl2/YOUR_GASPAR_USERNAME
+
+# Context name in your own kubeconfig, not the Kubernetes API server URL.
+context: rcp-caas
+
+# Optional. Prefer WANDB_API_KEY and HF_TOKEN in your submitting shell.
+# Those environment variables override these fields, even if set to empty strings.
+# wandb_api_key: ""
+# hf_token: ""

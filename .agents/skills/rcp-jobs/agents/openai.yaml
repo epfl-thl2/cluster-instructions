@@ -1,0 +1,3 @@
+interface:
+  display_name: "RCP Jobs"
+  short_description: "Submit and inspect THL2 jobs on EPFL RCP"
