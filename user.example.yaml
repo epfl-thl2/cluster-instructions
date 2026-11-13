@@ -1,0 +1,13 @@
+# Copy this file to user.yaml (same folder) and fill in your values.
+# Run `id` on jumphost.rcp.epfl.ch to find them (see README).
+
+user: YOUR_GASPAR_USERNAME     # e.g. stouras
+uid: YOUR_UID                  # the number after uid= in `id`
+group: THL2-StaffU             # the name in parentheses after gid= in `id`
+gid: 11167                     # the number after gid= in `id` (11167 for lab staff/PhDs)
+supplemental_groups: 84730     # thl2-scratch group id, gives access to /thl2 (same for everyone)
+working_dir: /thl2/YOUR_GASPAR_USERNAME
+
+# Optional. You can also export WANDB_API_KEY / HF_TOKEN in your shell instead.
+# wandb_api_key:
+# hf_token:
