@@ -9,7 +9,8 @@ How to get GPU jobs running on EPFL's RCP cluster as a member of THL2. Adapted f
 4. [Daily workflow](#daily-workflow)
 5. [Rules of the cluster](#rules-of-the-cluster)
 6. [Using it from an AI agent](#using-it-from-an-ai-agent-claude-code--codex)
-7. [Troubleshooting](#troubleshooting)
+7. [Billing](#billing)
+8. [Troubleshooting](#troubleshooting)
 
 ## How the cluster works
 
@@ -394,6 +395,26 @@ you can ask things like *"submit train.py as a training job on one H100 and tell
 starts running"*, or *"why is my job exp-001 failing?"*
 
 Remember: run the agent on your laptop, never on jumphost (see the [rules](#rules-of-the-cluster)).
+
+## Billing
+
+The lab pays per hour for each resource a job requests: GPU hours + CPU core hours + RAM GB hours.
+You pay for the resources you **request** (`--gpus`, `--cpus`, `--memory`) for as long as the job
+runs, not for what it actually uses. For example, if you request 4 GPUs and the job runs for 1 hour
+but only uses 1 GPU, you pay for 4 GPU hours.
+
+Prices in CHF per hour (from the [RCP pricing page](https://wiki.rcp.epfl.ch/en/home/CaaS/Pricing), October 2026):
+
+| Node type | GPU | CPU (per core) | RAM (per GB) |
+|---|---|---|---|
+| `b300` | 1.4683 | 0 | 0 |
+| `h200` | 0.53249 | 0.00267 | 0.00028 |
+| `h100` | 0.52620 | 0.00264 | 0.00028 |
+| `default` (A100 80GB) | 0.28600 | 0.00237 | 0.00052 |
+| `a100-40g` | 0.25648 | 0.00339 | 0.00032 |
+| `v100` | 0.13118 | 0.00298 | 0.00048 |
+
+To see how much you have spent, check the [consumption page](https://portal.rcp.epfl.ch/caas/consumption).
 
 ## Troubleshooting
 
